@@ -19,7 +19,7 @@ public class FirebaseConfig {
     private void initializeFirebase() {
         try (InputStream serviceAccount = getClass().getClassLoader().getResourceAsStream("serviceAccountKey.json")) {
             if (serviceAccount == null)
-                throw new IllegalArgumentException("Firebase service account file not found");
+                throw new IllegalArgumentException("Firebase service account file not found.");
 
             FirebaseApp.initializeApp(FirebaseOptions.builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
